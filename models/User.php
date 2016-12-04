@@ -137,6 +137,7 @@ class User extends ActiveRecord implements IdentityInterface
         if (parent::beforeSave($insert)) {
             if ($this->isNewRecord) {
                 $this->password = \Yii::$app->security->generatePasswordHash($this->password);
+                $this->date_created = date('Y-m-d H:i:s');
             }
             return true;
         } 

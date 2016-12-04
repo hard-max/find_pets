@@ -64,7 +64,7 @@ class SiteController extends Controller
         $model = new User(['scenario' => 'register']);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['login', 'msg' => 'success']);
         } else {
             return $this->render('register', [
                 'model' => $model,

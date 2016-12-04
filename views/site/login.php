@@ -12,6 +12,13 @@ $this->title = 'Login';
 <div class="site-login">
     <h1 class="page-title"><?= Html::encode($this->title) ?></h1>
 
+    <?php if (Yii::$app->request->get('msg') == 'success') { ?>
+        <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            Registration completed successfully! Please Login
+        </div>
+    <?php } ?>
+
     <?php $form = ActiveForm::begin([
         'id' => 'login-form',
         'layout' => 'horizontal',
