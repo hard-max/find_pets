@@ -50,6 +50,16 @@ $config = [
              'basePath' => '@webroot/assets',
              'baseUrl' => '@web/assets'
         ],
+        'i18n' => [
+            'translations' => [
+                'common*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en',
+                    'language' => 'ru',
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];
